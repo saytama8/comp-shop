@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Головна сторінка</title>
+</head>
+<section class="main-page">
+    <h1>Ласкаво просимо, {{ username }}!</h1>
+    <p>Це головна сторінка з продукцією вашого сайту!</p>
+    <a href="#products" class="btn">Оглянути сайт</a>
+    <br>
+    <a href="/logout" class="logout">Вийти</a>
+</section>
+</body>
+</html>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Продаж комп'ютерів</title>
+    <style>
+
+
+        /* Вихід */
+        .logout {
+            display: inline-block;
+            padding: 5px 10px;
+            margin-top: 10px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .logout:hover {
+            background-color: #c0392b;
+        }
+    
+        /* Загальні стилі */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Helvetica', sans-serif;
+            color: #222;
+            margin: 0;
+        }
+
+        /* Заголовок */
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Секція - головна */
+        section {
+            padding: 40px 20px;
+            margin: 30px 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+        }
+
+        section p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Продукти */
+        .product-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .product {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            width: 30%;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .product img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product h3 {
+            font-size: 1.4em;
+            margin: 15px 0;
+        }
+
+        .product .price {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .product .specs {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .product .specs p {
+            margin: 8px 0;
+        }
+
+        .product-description {
+            display: none;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        /* Контакти та Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        .secure {
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 40px;
+        }
+
+        /* Мобільна адаптація */
+        @media (max-width: 768px) {
+            .product-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Сайт продажу комп'ютерів</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Головна</a></li>
+                <li><a href="#products">Продукти</a></li>
+                <li><a href="#about">Про нас</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Ласкаво просимо до нашого магазину!</h2>
+        <p>Шукаєте потужний комп'ютер? У нас є найкращі варіанти для вас!</p>
+        <a href="#products" class="btn">Переглянути продукти</a>
+    </section>
+
+    <section id="products">
+        <h2>Наші продукти</h2>
+        <div class="product-list">
+            <!-- Продукт 1 -->
+            <div class="product">
+                <img src="https://images.prom.ua/6310089261_w200_h200_igrovoj-kompyuter-ryzen.jpg" alt="Ігровий комп'ютер">
+                <h3>Ігровий комп'ютер</h3>
+                <p class="price">72 999грн</p>
+                <div class="specs">
+                    <p><strong>Процесор:</strong> Intel Core i7-14700K </p>
+                    <p><strong>Оперативна пам'ять:</strong> 64 GB</p>
+                    <p><strong>Відеокарта:</strong> NVIDIA RTX 4080</p>
+                    <p><strong>Жорсткий диск:</strong> 2 TB HDD</p>
+                </div>
+                <div class="product-description" id="desc-1">
+                    <p>Цей комп'ютер ідеально підходить для геймерів та професіоналів, які потребують високої потужності та швидкодії для будь-яких задач.</p>
+                </div>
+                <a href="javascript:void(0);" class="btn" onclick="toggleDescription(1)">Детальніше</a>
+            </div>
+
+            <!-- Продукт 2 -->
+            <div class="product">
+                <img src="https://it-blok.com.ua/image/cache/catalog/Korpusa/Gamemax%20ET211%20400W/1-268x268.png.pagespeed.ce.XbE2IFCkhk.png" alt="Комп'ютер для роботи">
+                <h3>Комп'ютер для роботи</h3>
+                <p class="price">9 499 грн</p>
+                <div class="specs">
+                    <p><strong>Процесор:</strong> Intel Core i5</p>
+                    <p><strong>Оперативна пам'ять:</strong> 8 GB</p>
+                    <p><strong>Відеокарта:</strong> Intel UHD</p>
+                    <p><strong>Жорсткий диск:</strong> 512 GB SSD</p>
+                </div>
+                <div class="product-description" id="desc-2">
+                    <p>Цей комп'ютер підходить для офісної роботи, легких графічних задач та щоденного використання.</p>
+                </div>
+                <a href="javascript:void(0);" class="btn" onclick="toggleDescription(2)">Детальніше</a>
+            </div>
+
+            <!-- Продукт 3 -->
+            <div class="product">
+                <img src="https://marketing.brain.com.ua/static/articles_description_ua/img_20200622151504.jpeg" alt="Ноутбук для навчання">
+                <h3>Ноутбук для навчання</h3>
+                <p class="price">16 999 грн</p>
+                <div class="specs">
+                    <p><strong>Процесор:</strong> AMD Ryzen 5</p>
+                    <p><strong>Оперативна пам'ять:</strong> 8 GB</p>
+                    <p><strong>Відеокарта:</strong> AMD Radeon Vega 8</p>
+                    <p><strong>Жорсткий диск:</strong> 256 GB SSD</p>
+                </div>
+                <div class="product-description" id="desc-3">
+                    <p>Цей ноутбук ідеальний для студентів та учнів, які використовують базові додатки для навчання.</p>
+                </div>
+                <a href="javascript:void(0);" class="btn" onclick="toggleDescription(3)">Детальніше</a>
+            </div>
+
+            <!-- Продукт 4 -->
+            <div class="product">
+                <img src="https://s.ek.ua/posts/files/6062/wide_pic.jpg" alt="Ноутбук для ігор">
+                <h3>Ноутбук для ігор</h3>
+                <p class="price">47 999 грн</p>
+                <div class="specs">
+                    <p><strong>Процесор:</strong> AMD Ryzen 7 7600x</p>
+                    <p><strong>Оперативна пам'ять:</strong> 32 GB</p>
+                    <p><strong>Відеокарта:</strong> RTX 4070</p>
+                    <p><strong>Жорсткий диск:</strong> 1 TB SSD</p>
+                </div>
+                <div class="product-description" id="desc-4">
+                    <p>Потужний ігровий ноутбук з найновішими технологіями для комфортної гри на високих налаштуваннях.</p>
+                </div>
+                <a href="javascript:void(0);" class="btn" onclick="toggleDescription(4)">Детальніше</a>
+            </div>
+
+            <!-- Продукт 5 -->
+            <div class="product">
+                <img src="https://i.moyo.ua/img/products/4978/45_600.jpg?1737099687" alt="Клавіатура Keychron">
+                <h3>Клавіатура Keychron K2 84 keys</h3>
+                <p class="price">3 799 грн</p>
+                <div class="specs">
+                    <p><strong>Тип підключення:</strong> Бездротове</p>
+                    <p><strong>Конструкція клавіатури:</strong> Механічна</p>
+                    <p><strong>Інтерфейс підключення:</strong> Bluetooth, USB</p>
+                    <p><strong>Розкладка:</strong> ENG/UKR</p>
+                </div>
+                <div class="product-description" id="desc-5">
+                    <p>Преміум механічна клавіатура для продуктивної роботи та комфортного набору тексту.</p>
+                </div>
+                <a href="javascript:void(0);" class="btn" onclick="toggleDescription(5)">Детальніше</a>
+            </div>
+
+            <!-- Продукт 6 -->
+            <div class="product">
+                <img src="https://i.moyo.ua/img/products/5287/75_600.jpg" alt="Клавіатура Akko">
+                <h3>Клавіатура Akko 3108 V2 Naruto V2 Pink</h3>
+                <p class="price">2 599 грн</p>
+                <div class="specs">
+                    <p><strong>Тип підключення:</strong> Дротове</p>
+                    <p><strong>Конструкція клавіатури:</strong> Механічна</p>
+                    <p><strong>Інтерфейс підключення:</strong> Bluetooth, USB</p>
+                    <p><strong>Розкладка:</strong> ENG/UKR</p>
+                </div>
+                <div class="product-description" id="desc-6">
+                    <p>Механічна клавіатура з оригінальним дизайном і чудовим відчуттям натискання клавіш.</p>
+                </div>
+                <a href="javascript:void(0);" class="btn" onclick="toggleDescription(6)">Детальніше</a>
+            </div>
+
+            <!-- Продукт 7 -->
+            <div class="product">
+                <img src="https://s.ek.ua/jpg/1894574.jpg" alt="Килимок для миші">
+                <h3>Cougar Arena X</h3>
+                <p class="price">1 199 грн</p>
+                <div class="specs">
+                    <p><strong>Матеріал:</strong> Гума</p>
+                    <p><strong>Розмір:</strong> 1000 мм x 400 мм</p>
+                    <p><strong>Тип:</strong> Антиковзаючий</p>
+                </div>
+                <div class="product-description" id="desc-7">
+                    <p>Просторий і зручний килимок для миші, що забезпечує високу точність в управлінні.</p>
+                </div>
+                <a href="javascript:void(0);" class="btn" onclick="toggleDescription(7)">Детальніше</a>
+            </div>
+
+            <!-- Продукт 8 -->
+            <div class="product">
+                <img src="https://files.foxtrot.com.ua/PhotoNew/img_0_709_4356_0_1_637989253401283781.webp" alt="Ігрова миша Logitech G502">
+                <h3>Ігрова миша Logitech G502</h3>
+                <p class="price">2 999 грн</p>
+                <div class="specs">
+                    <p><strong>Тип підключення:</strong> Бездротове</p>
+                    <p><strong>Кількість кнопок:</strong> 11</p>
+                    <p><strong>Датчик:</strong> Оптичний, 25 600 DPI</p>
+                </div>
+                <div class="product-description" id="desc-8">
+                    <p>Ігрова миша з високою чутливістю та додатковими кнопками для комфортної гри.</p>
+                </div>
+                <a href="javascript:void(0);" class="btn" onclick="toggleDescription(8)">Детальніше</a>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <h2>Про нас</h2>
+        <p>Ми пропонуємо комп'ютери високої якості за доступними цінами. Ми прагнемо допомогти вам вибрати ідеальний комп'ютер для ваших потреб!</p>
+    </section>
+
+    <section id="contact">
+        <h2>Контакти</h2>
+        <p>Ми завжди раді допомогти! Зв'язуйтесь з нами через:</p>
+        <ul>
+            <li>Email: dokukinvitalik787@gmail.com</li>
+            <li>Телефон: +380 99 639 7625</li>
+            <li>Адреса: Тисменицька 249 б</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Сайт продажу комп'ютерів. Всі права захищені.</p>
+        <p>&copy; Автор: Віталій Докукін Сергійович</p>
+    </footer>
+
+    <footer>
+        <p>&copy; 2025 Продаж комп'ютерної техніки. Всі права захищено.</p>
+    </footer>
+
+    <script>
+        function toggleDescription(productId) {
+            var desc = document.getElementById('desc-' + productId);
+            if (desc.style.display === "none") {
+                desc.style.display = "block";
+            } else {
+                desc.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+
+

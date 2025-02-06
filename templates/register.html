@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .registration-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 16px;
+            color: #555;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #5c8f9e;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4b7481;
+        }
+        .form-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .form-footer a {
+            text-decoration: none;
+            color: #5c8f9e;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="registration-container">
+        <h2>Реєстрація</h2>
+        <form action="/register" method="POST">
+            <label for="username">Створіть логін(ім'я):</label>
+            <input type="text" id="username" name="username" required placeholder="Введіть ваш логін">
+
+            <label for="password">Створіть надійний пароль:</label>
+            <input type="password" id="password" name="password" required placeholder="Введіть ваш пароль">
+
+            <button type="submit">Зареєструватися</button>
+        </form>
+
+        <div class="form-footer">
+            <p>Вже є акаунт? <a href="/login">Увійти</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
